@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .container-responsive {
+    @apply w-full max-w-[1400px] mx-auto px-3 sm:px-4 lg:px-6;
+  }
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans antialiased;
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.slate.400') transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(148 163 184 / 0.6);
+  border-radius: 9999px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Card utility */
+.card {
+  @apply bg-white dark:bg-slate-900 rounded-xl shadow-card ring-1 ring-slate-200/70 dark:ring-slate-800;
+}
+
+/* Button base */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-white dark:ring-offset-slate-950;
+}
+.btn-primary {
+  @apply bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-white;
+}
+.btn-ghost {
+  @apply hover:bg-slate-100 dark:hover:bg-slate-800;
+}
